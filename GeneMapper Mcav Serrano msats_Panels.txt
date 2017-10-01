@@ -1,0 +1,15 @@
+Version	GM v 3.0
+Kit type:	MICROSATELLITE
+Chemistry Kit	Mcav Serrano msats	none
+Panel	Plex 1	none
+MC29	yellow	173.0	212.0	-	4	0.0	none	
+MC41	blue	359.0	463.0	-	4	0.0	none	
+MC49	green	207.0	399.0	-	3	0.0	none	
+Panel	Plex 2	none
+MC46	yellow	142.0	181.251937984	-	3	0.0	none	
+MC65	blue	127.0	190.012618297	-	3	0.0	none	
+MC97	green	170.028676162	204.288674171	-	4	0.0	none	
+Panel	Plex 3	none
+MC4	yellow	115.0	248.0	-	3	0.0	none	
+MC18	blue	233.0	275.0	-	3	0.0	none	
+MC114	green	167.0	254.30283911700002	-	3	0.0	none	
