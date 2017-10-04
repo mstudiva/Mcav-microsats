@@ -15,7 +15,7 @@
 # Interactive or batch job usage
 #   Syntax: menu= < YES | NO > 
 # For batch runs it needs to be set to NO
-menu=YES
+menu=NO
 #
 # Specification of length of names of indiviudals
 #    Syntax: nmlength=<INTEGER between 0 .. 30>
@@ -133,7 +133,7 @@ nmlength=10
 datatype=BrownianMicrosatelliteData
 include-unknown=NO
 inheritance-scalars={1.00000000000000000000}
-population-relabel={1, 2, 3, 4}
+population-relabel={1, 2, 3}
 usertree=RANDOMTREE
 #
 ################################################################################
@@ -142,7 +142,7 @@ usertree=RANDOMTREE
 #
 # input file location
 #   Syntax infile=FILEPATH
-infile=infileNWGOM
+infile=infileGOM
 #
 # Random number seed specification
 #   Syntax random-seed=<AUTO | OWN:< seedfile | value >
@@ -185,13 +185,13 @@ print-data=NO
 #
 # Print output to file [default is outfile]
 #   Syntax outfile=outfilename
-outfile=outfileNWGOM-C
+outfile=outfileGOM-A
 #
 #-------------------------------------------------------------------------------
 #
 # Print output to a PDF file [default is outfile.pdf]
 #   Syntax pdf-outfile=outfilename.pdf
-pdf-outfile=outfileNWGOM-C.pdf
+pdf-outfile=outfileGOM-A.pdf
 #
 #-------------------------------------------------------------------------------
 #
@@ -384,7 +384,7 @@ fst-type=THETA
 #        this describes a circular stepping stone model with 5 symmetric rates
 #         and independent sizes, a very basic stepping stone with 2 parameters would
 #        look like this custom-migration={mm00m mmm00 0mmm0 00mmm m00mm}
-custom-migration={****0***00**000*}
+custom-migration={*********}
 #
 # Influence of geography on migration rate
 # a distance matrix between populations changes the migration rate matrix so that

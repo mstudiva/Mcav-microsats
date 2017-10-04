@@ -1,4 +1,4 @@
-setwd("~/Documents/Grad_School/Dissertation/Data/Microsatellites/BayesAss/NWGOM")
+setwd("~/path/to/working/directory")
 
 # install.packages("migest")
 # install.packages("circlize")
@@ -7,8 +7,8 @@ library(migest)
 library(circlize)
 
 # reading in migration and plot data
-df0 <- read.csv("NWGOM_migration.csv", stringsAsFactors=FALSE)
-df1 <- read.csv("NWGOM_plot.csv", stringsAsFactors=FALSE)
+df0 <- read.csv("template_migration.csv", stringsAsFactors=FALSE)
+df1 <- read.csv("template_plot.csv", stringsAsFactors=FALSE)
 str(df1)
 
 # default chord diagram, don't worry about colors or appearance
