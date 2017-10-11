@@ -1,4 +1,4 @@
-setwd("~/Documents/Grad_School/Dissertation/Data/Microsatellites/FDRtool")
+setwd("~/path/to/working/directory/")
 
 # install.packages("fdrtool")
 

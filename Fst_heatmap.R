@@ -1,4 +1,4 @@
-setwd("~/Documents/Grad_School/Dissertation/Data/Microsatellites/heatmap")
+setwd("~/path/to/working/directory/")
 
 library(ggplot2)
 library(reshape2)
