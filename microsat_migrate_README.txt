@@ -20,14 +20,11 @@ ssh mstudiva@koko-login.fau.edu
 # adding modules to your .bashrc so they load each time you login
 cd
 nano .bashrc
-# add the following lines under "User specific aliases and functions"
+# add the following line under "User specific aliases and functions"
 module load openmpi/2.0.2
-module load migrate-n/3.6.11
 # save using ctrl + x, keep name .bashrc
 source .bashrc
 
-# you should not need to install migrate-n on your own account, but the instructions are 
-# provided just in case
 mkdir bin 
 cd bin
 # install migrate 3.6.11
@@ -48,19 +45,14 @@ mkdir CBC
 
 # upload Migrate-formatted subset datasets to KOKO: 
 # log out of cluster first, must be on local machine first
-cd /Users/Mike/Documents/Grad_School/Dissertation/Data/Microsatellites/Migrate/CBC
-scp -r infileMLG_CBC *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/CBC
+cd /path/to/local/directory
+scp -r infileMLG_CBC *parmfile* mstudiva@koko-login.fau.edu:~/path/to/model/directory
 # There should be one infile and 4 parmfiles
 
 # repeat for all other models
-scp -r infileMLG_EFGB *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/EFGB
-scp -r infileMLG_WFGB *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/WFGB
-scp -r infileMLG_PRTER *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/PRTER
-scp -r infileMLG_NWGOM *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/NWGOM
-scp -r infileMLG_GOM *parmfile* mstudiva@koko-login.fau.edu:~/microsat/MLG/GOM
 
 # running the models
-echo "mpirun -np 100 migrate-n-mpi parmfile -nomenu" > migrate
+echo "mpirun -np 100 migrate-n-mpi parmfileA -nomenu" > migrate
 
 # to run the migrate commands, first you need to modify the file so it appears as a job 
 # script in SLURM
@@ -92,11 +84,11 @@ squeue -u mstudiva
 
 # launcher creator is a job submission script and will automatically spread tasks across
 # cores and nodes evenly
-# currently not working
+# does not appear to work with openmpi
 # launcher_creator.py -j migrate -n migrate -q shortq7 -t 2:00:00 -N 5 -e mstudiva@fau.edu
 
 # copy the output files to your local machine (scp from the local machine)
-cd /Users/Mike/Documents/Grad_School/Dissertation/Data/Microsatellites/Migrate/GOM
-scp mstudiva@koko.fau.edu:~/microsat/GOM/*outfile* .
+cd /path/to/local/directory
+scp mstudiva@koko.fau.edu:~/path/to/model/directory/* .
 
 # repeat for all other models
