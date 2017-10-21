@@ -89,6 +89,6 @@ squeue -u mstudiva
 
 # copy the output files to your local machine (scp from the local machine)
 cd /path/to/local/directory
-scp mstudiva@koko.fau.edu:~/path/to/model/directory/* .
+scp mstudiva@koko-login.fau.edu:~/path/to/model/directory/* .
 
 # repeat for all other models
