@@ -10,22 +10,23 @@ ssh mstudiva@koko-login.fau.edu
 #	- mstudiva@fau.edu by your actual email;
 #	- mstudiva with your KoKo user name.
 
-# The idea is to copy the chunks separated by empty lines below and paste them into your 
-# cluster terminal window consecutively. 
+# The idea is to copy the chunks separated by empty lines below and paste them into your
+# cluster terminal window consecutively.
 
-# The lines beginning with hash marks (#) are explanations and additional instructions - 
-# please make sure to read them before copy-pasting. 
+# The lines beginning with hash marks (#) are explanations and additional instructions -
+# please make sure to read them before copy-pasting.
 
 #——————————————————————————————
 # adding modules to your .bashrc so they load each time you login
 cd
 nano .bashrc
 # add the following line under "User specific aliases and functions"
-module load openmpi/2.0.2
+module load openmpi
+module load migrate-n
 # save using ctrl + x, keep name .bashrc
 source .bashrc
 
-mkdir bin 
+mkdir bin
 cd bin
 # install migrate 3.6.11
 # wget http://popgen.sc.fsu.edu/currentversions/migrate-3.6.11.src.tar.gz
@@ -43,7 +44,7 @@ cd microsat
 mkdir CBC
 # etc
 
-# upload Migrate-formatted subset datasets to KOKO: 
+# upload Migrate-formatted subset datasets to KOKO:
 # log out of cluster first, must be on local machine first
 cd /path/to/local/directory
 scp -r infileMLG_CBC *parmfile* mstudiva@koko-login.fau.edu:~/path/to/model/directory
@@ -54,7 +55,7 @@ scp -r infileMLG_CBC *parmfile* mstudiva@koko-login.fau.edu:~/path/to/model/dire
 # running the models
 echo "mpirun -np 100 migrate-n-mpi parmfileA -nomenu" > migrate
 
-# to run the migrate commands, first you need to modify the file so it appears as a job 
+# to run the migrate commands, first you need to modify the file so it appears as a job
 # script in SLURM
 nano migrate
 # use return to add a line at the beginning and add the following text (including the #):
